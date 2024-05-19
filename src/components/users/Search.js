@@ -30,7 +30,6 @@ const Search = () => {
          <form onSubmit={onSubmit} className="form">
             {' '}
             <input type="text" name="text" placeholder="Search User" value={text} onChange={onChange} />
-            8 / 22 README.md 2024-05-17
             <input type="submit" value="Search" className="btn btn-success btn-block" />
          </form>
          <button className="btn btn-danger btn-block" onClick={clearUsers}>
