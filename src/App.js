@@ -3,6 +3,7 @@ import './App.css';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Search from './components/users/Search';
+import User from './components/users/User';
 import NotFound from "./components/pages/NotFound";
 import About from "./components/pages/About";
 function App() {
@@ -15,10 +16,11 @@ function App() {
                <Switch>
                   <Route exact path="/" component={Search} />
                   <Route exact path="/about" component={About} />
+                  <Route exact path="/user/:id" component={User} />
                   <Route exact path="/*" component={NotFound} />
                </Switch>
             </div>
-         </Router>
+         </Router>   
       </div>
    );
 }
