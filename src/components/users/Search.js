@@ -2,11 +2,13 @@ import axios from 'axios';
 import React, { useState, useEffect, useContext } from 'react';
 import Users from './Users';
 import { TextContext } from '../TextContext';
+import { ThemeContext } from '../ThemeContext';
 
 const Search = () => {
     const [text, setText] = useState('');
     const [users, setUsers] = useState([]);
     const { currentSearch, setCurrentSearch } = useContext(TextContext);
+    const { theme, setTheme } = useContext(ThemeContext);
 
     useEffect(() => {
       if(currentSearch)
@@ -31,7 +33,6 @@ const Search = () => {
             setText('');
         }
     };
-    console.log(currentSearch)
     const onChange = (e) => setText(e.target.value);
 
     const clearUsers = () => {
@@ -39,12 +40,11 @@ const Search = () => {
         setCurrentSearch("");
         localStorage.removeItem("currentSearch");
     };
-
     return (
         <div>
             <form onSubmit={onSubmit} className="form">
                 <input type="text" name="text" placeholder="Search User" value={text} onChange={onChange} />
-                <input type="submit" value="Search" className="btn btn-success btn-block" />
+                <input type="submit" value="Search" className={"btn btn-success btn-block"} />
             </form>
             <button className="btn btn-danger btn-block" onClick={clearUsers}>Clear</button>
             <Users users={users} />

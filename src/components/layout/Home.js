@@ -3,9 +3,11 @@ import About from '../pages/About';
 import NotFound from '../pages/NotFound';
 import Search from '../users/Search';
 import User from '../users/User';
+
 const Home = () => {
+
    return (
-      <div className="container">
+      <div className="container" >
          <Switch>
             <Route exact path="/" component={Search} />
             <Route exact path="/about" component={About} />
