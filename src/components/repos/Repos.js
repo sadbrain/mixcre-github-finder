@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import RepoItem from "./RepoItem";
 
 function Repos(props) {
-  const repos= props.props
-  return repos.map((repo) => <RepoItem props={repo} />);
+  const repos= props.repos
+  return repos?.map((repo) => <RepoItem props={repo} />);
 }
 export default Repos;
